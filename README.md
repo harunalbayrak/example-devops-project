@@ -1,1 +1,0 @@
-# example-devops-project
