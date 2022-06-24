@@ -3,7 +3,7 @@ version: '3.8'
 services:
   jenkins:
     image: jenkins/jenkins:lts
-    privileged: true
+    privileged: false
     user: root
     ports:
       - 8080:8080
@@ -12,3 +12,10 @@ services:
     volumes:
       - /Users/bilgem/Development/example-devops-project/jenkins/jenkins_compose/jenkins_configuration:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+        - default
+      
+networks:
+    default:
+        name: bridge
+        external: true
